@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+typedef string PoleRet[100];
+void Velka(string retez) {
+    for (int i = 0; i < retez.length(); i++) {
+        if (retez[i] >= 'a' and retez[i] <= 'z') {
+            retez[i] -= 'a'-'A';
+        }
+    }
+}
+bool Hledej(string co,PoleRet kde,int pocet){
+    Velka(co);
+   /* int i=0;
+    while(i<pocet and kde[i]!=co){
+        i++
+    }*/
+    for(int i=0;i<pocet;i++){
+        Velka(kde[i]);
+        if(co==kde[i]){
+            return true;
+        }
+    }
+    return false;
+    }
