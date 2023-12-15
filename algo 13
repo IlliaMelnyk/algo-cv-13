@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+typedef int Tmatice[100][100];
+void nactiMatice(Tmatice mat,int pocet){
+    for(int i=0;i<pocet;i++){
+        for(int j=0;j<pocet;j++){
+            cin>>mat[i][j];
+        }
+    }
+}
+void sectiMatice(Tmatice m1,Tmatice m2,Tmatice vysledek,int pocet){
+    for(int i=0;i<pocet;i++) {
+        for (int j = 0; j < pocet; j++)
+           vysledek[i][j] = m1[i][j]+m2[i][j];
+    }
+        }
+        void vypisMatice(Tmatice mat,int pocet){
+            for(int i=0;i<pocet;i++){
+                for(int j=0;j<pocet;j++)
+                    cout<<mat[i][j]<<" ";
+                cout<<endl;
+            }
+        }
+        //n-pocet kolik je mozne nacist z prikazoveho radku
+        //param-pole zadanych hodnot
+int main(int n,char* param[]){
+int cislo=0;
+Tmatice m1,m2,vysledek;
+string txt = param[1];
+//prvni parametr je nazev programu
+// ./a.out pro zapsani v prikazevemu radku
+for(int i=0;i < txt.length();i++){
+    cislo = cislo * 10 + (param[1][i]-'0');
+}
+nactiMatice(m1,cislo);
+nactiMatice(m2,cislo);
+sectiMatice(m1,m2,vysledek,cislo);
+vypisMatice(vysledek,cislo);
+
+    return 0;
+}
